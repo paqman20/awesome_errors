@@ -1,6 +1,7 @@
 #1.docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.
   See 'docker run --help'.
   Solution = export DOCKER_HOST=tcp://localhost:2375
+  Solution #2 = sudo gpasswd -a ${USER} docker. This added my user to the docker usergroup and seems to have solved the problem permantly 
 #2 Cannot start service pihole: driver failed programming external connectivity on endpoint pihole (0e3cf45b68dcdf3cb88e712231538433faad2fa3fdd0dc1011758f211a85c31d)
 : Error starting userland proxy: listen tcp4 0.0.0.0:53: bind: address already in use
   Solution= Changed the port Docker was running the service on so 80 became 8080, 50 beacome 550 and so on
